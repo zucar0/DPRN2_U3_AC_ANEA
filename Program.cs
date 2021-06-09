@@ -43,7 +43,8 @@ namespace DPRN2_U3_AC_ANEA
                 {
                     try
                     {
-
+                        NumerosReales numerosreales = new NumerosReales(2,"Resta");
+                        numerosreales.resta();
                     }
                     catch(Exception ex)
                     {
@@ -54,7 +55,8 @@ namespace DPRN2_U3_AC_ANEA
                 {
                     try
                     {
-
+                        NumerosReales numerosreales = new NumerosReales(3,"Multiplicación");
+                        numerosreales.multiplicacion();
                     }
                     catch(Exception ex)
                     {
@@ -65,7 +67,8 @@ namespace DPRN2_U3_AC_ANEA
                 {
                     try
                     {
-
+                        NumerosReales numerosreales = new NumerosReales(4,"División");
+                        numerosreales.division();
                     }
                     catch(Exception ex)
                     {
@@ -76,7 +79,8 @@ namespace DPRN2_U3_AC_ANEA
                 {
                     try
                     {
-
+                        NumerosReales numerosreales = new NumerosReales(5,"Al Cuadrado");
+                        numerosreales.alCuadrado();
                     }
                     catch(Exception ex)
                     {
@@ -87,7 +91,8 @@ namespace DPRN2_U3_AC_ANEA
                 {
                     try
                     {
-
+                        NumerosReales numerosreales = new NumerosReales(6,"Potencia");
+                        numerosreales.potencia();
                     }
                     catch(Exception ex)
                     {
@@ -234,6 +239,18 @@ namespace DPRN2_U3_AC_ANEA
                     try
                     {
 
+                    }
+                    catch(Exception ex)
+                    {
+                        System.Console.WriteLine(ex);
+                    }
+                }
+                else if(metodoElegido3==7)
+                {
+                    try
+                    {
+                        Matrices matrices = new Matrices(7, "Matriz transpuesta");
+                        matrices.matrizTranspuesta();
                     }
                     catch(Exception ex)
                     {

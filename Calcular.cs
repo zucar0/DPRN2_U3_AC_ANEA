@@ -27,8 +27,8 @@ abstract class Calcular{
     public abstract float resta();
     public abstract float multiplicacion();
     public abstract float division();
-    public abstract float alCuadrado();
-    public abstract float potencia();
+    public abstract double alCuadrado();
+    public abstract double potencia();
     //Interfaz para el pais
     public int DatoConcepto{
         get{

@@ -19,12 +19,16 @@ class Matrices:Calcular{
     {
         return base.concepto;
     }
-    public override float alCuadrado()
+    public override double alCuadrado()
     {
         return base.concepto;
     }
-    public override float potencia()
+    public override double potencia()
     {
         return base.concepto;
+    }
+
+    public void matrizTranspuesta(){
+        System.Console.WriteLine("La matriz transpuesta");
     }
 }
