@@ -31,4 +31,19 @@ class Matrices:Calcular{
     public void matrizTranspuesta(){
         System.Console.WriteLine("La matriz transpuesta");
     }
+
+    public void matrizCuadrada()
+    {
+        System.Console.WriteLine("Vamos a generar una matriz cuadrada.");
+        System.Console.WriteLine("Indícamos el número de filas: ");
+        var opcionFilas = Console.ReadLine();
+        int numeroDeFilas = int.Parse(opcionFilas);
+        System.Console.WriteLine("Indícamos el número de columnas: ");
+        var opcionColumnas = Console.ReadLine();
+        int numeroDeColumnas = int.Parse(opcionFilas);
+    }
+    public void matrizCuadradaAutomatica()
+    {
+        
+    }
 }

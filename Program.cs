@@ -7,12 +7,12 @@ namespace DPRN2_U3_AC_ANEA
         static void Main(string[] args)
         {
             
-            string suma = "1.- Suma";
-            string resta = "2.- Resta";
-            string multiplicacion = "3.- Multiplicación";
-            string division = "4.- División";
-            string alCuadrado = "5.- Al Cuadrado";
-            string potencia="6.- Potencia";
+            string suma = "1.- Suma ";
+            string resta = "2.- Resta ";
+            string multiplicacion = "3.- Multiplicación ";
+            string division = "4.- División ";
+            string alCuadrado = "5.- Al Cuadrado ";
+            string potencia="6.- Potencia ";
             string elegirMetodo ="Por favor elige el método que deseas calcular:\n";
 
             System.Console.WriteLine("Bienvenido. Por favor ingresa el concepto a calcular.");  
@@ -21,6 +21,7 @@ namespace DPRN2_U3_AC_ANEA
             int elegirConcepto = int.Parse(opcion);
             switch(elegirConcepto)
             {
+                //CONCETO NUMEROS REALES
                 case 1 when (elegirConcepto==1):
                 //Se abre un nuevo menú para elegir el método
                 System.Console.WriteLine(elegirMetodo);
@@ -100,6 +101,7 @@ namespace DPRN2_U3_AC_ANEA
                     }
                 }
                 break;
+                //CONCETO FRACCIONES
                 case 2 when (elegirConcepto==2):
                 //Se abre un nuevo menú para elegir el método
                 System.Console.WriteLine(elegirMetodo);
@@ -110,7 +112,8 @@ namespace DPRN2_U3_AC_ANEA
                 {
                     try
                     {
-
+                        Fracciones fracciones = new Fracciones(1,"Suma");
+                        fracciones.suma();
                     }
                     catch(Exception ex)
                     {
@@ -121,7 +124,8 @@ namespace DPRN2_U3_AC_ANEA
                 {
                     try
                     {
-
+                        Fracciones fracciones = new Fracciones(2,"Resta");
+                        fracciones.resta();
                     }
                     catch(Exception ex)
                     {
@@ -132,7 +136,8 @@ namespace DPRN2_U3_AC_ANEA
                 {
                     try
                     {
-
+                        Fracciones fracciones = new Fracciones(3,"Multiplicación");
+                        fracciones.multiplicacion();
                     }
                     catch(Exception ex)
                     {
@@ -143,7 +148,8 @@ namespace DPRN2_U3_AC_ANEA
                 {
                     try
                     {
-
+                        Fracciones fracciones = new Fracciones(4,"División");
+                        fracciones.division();
                     }
                     catch(Exception ex)
                     {
@@ -154,7 +160,8 @@ namespace DPRN2_U3_AC_ANEA
                 {
                     try
                     {
-
+                        Fracciones fracciones = new Fracciones(5,"Al Cuadrado");
+                        fracciones.alCuadrado();
                     }
                     catch(Exception ex)
                     {
@@ -163,9 +170,10 @@ namespace DPRN2_U3_AC_ANEA
                 }
                 else if(metodoElegido2==6)
                 {
-                                        try
+                    try
                     {
-
+                        Fracciones fracciones = new Fracciones(6,"Potencia");
+                        fracciones.potencia();
                     }
                     catch(Exception ex)
                     {
@@ -173,6 +181,7 @@ namespace DPRN2_U3_AC_ANEA
                     }
                 }
                 break;
+                //CONCETO MATRICES
                 case 3 when (elegirConcepto==3):
                 //Se abre un nuevo menú para elegir el método
                 System.Console.WriteLine(elegirMetodo);
@@ -183,7 +192,8 @@ namespace DPRN2_U3_AC_ANEA
                 {
                     try
                     {
-
+                        Matrices matrices = new Matrices(1,"Suma");
+                        matrices.suma();
                     }
                     catch(Exception ex)
                     {
@@ -194,7 +204,8 @@ namespace DPRN2_U3_AC_ANEA
                 {
                     try
                     {
-
+                        Matrices matrices = new Matrices(2,"Resta");
+                        matrices.resta();
                     }
                     catch(Exception ex)
                     {
@@ -205,7 +216,8 @@ namespace DPRN2_U3_AC_ANEA
                 {
                     try
                     {
-
+                        Matrices matrices = new Matrices(3,"Multiplicación");
+                        matrices.multiplicacion();
                     }
                     catch(Exception ex)
                     {
@@ -216,7 +228,8 @@ namespace DPRN2_U3_AC_ANEA
                 {
                     try
                     {
-
+                        Matrices matrices = new Matrices(4,"División");
+                        matrices.division();
                     }
                     catch(Exception ex)
                     {
@@ -227,7 +240,8 @@ namespace DPRN2_U3_AC_ANEA
                 {
                     try
                     {
-
+                        Matrices matrices = new Matrices(5,"Al Cuadrado");
+                        matrices.alCuadrado();
                     }
                     catch(Exception ex)
                     {
@@ -238,7 +252,8 @@ namespace DPRN2_U3_AC_ANEA
                 {
                     try
                     {
-
+                        Matrices matrices = new Matrices(6,"Potencia");
+                        matrices.potencia();
                     }
                     catch(Exception ex)
                     {
@@ -256,6 +271,27 @@ namespace DPRN2_U3_AC_ANEA
                     {
                         System.Console.WriteLine(ex);
                     }
+                }
+                //Segunda opción del menú.
+                System.Console.WriteLine("***Generación de matriz cuadrada***");
+                System.Console.WriteLine("Elige una opción para crearla:\n1.- Manual\n2.Automática");
+                var opcionGeneracion = Console.ReadLine();
+                int eleccionGeneracion = int.Parse(opcionGeneracion);
+                //a.
+                if(eleccionGeneracion==1)
+                {
+                    Matrices matrizCuadrada = new Matrices(8,"Matriz cuadrada");
+                    matrizCuadrada.matrizCuadrada();
+                    System.Console.WriteLine("Se imprimirá la matriz cuadrada generada por el usuario: ");
+                    System.Console.WriteLine(matrizCuadrada);
+                }
+                //b.
+                else if(eleccionGeneracion==2)
+                {
+                    Matrices matrizcuadradaautomatica = new Matrices(9, "Matriz cuadrada automática");
+                    matrizcuadradaautomatica.matrizCuadradaAutomatica();
+                    System.Console.WriteLine("Se imprimirá la matriz cuadrada generada automáticamente: ");
+                    System.Console.WriteLine(matrizcuadradaautomatica);
                 }
                 break;
             }
