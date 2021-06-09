@@ -6,7 +6,15 @@ namespace DPRN2_U3_AC_ANEA
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+
+            try
+            {
+
+            }
+            catch(Exception ex)
+            {
+                System.Console.WriteLine(ex);
+            }
         }
     }
 }

@@ -23,12 +23,12 @@ abstract class Calcular{
             System.Console.WriteLine("{0}. Concepto Matrices", concepto);
         }
     }
-    public abstract string suma();
-    public abstract string resta();
-    public abstract string multiplicacion();
-    public abstract string division();
-    public abstract string alCuadrado();
-    public abstract string potencia();
+    public abstract float suma();
+    public abstract float resta();
+    public abstract float multiplicacion();
+    public abstract float division();
+    public abstract float alCuadrado();
+    public abstract float potencia();
     //Interfaz para el pais
     public int DatoConcepto{
         get{
