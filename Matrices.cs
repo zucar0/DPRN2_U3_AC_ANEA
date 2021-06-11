@@ -7,6 +7,39 @@ class Matrices:Calcular{
 
     public override float suma()
     {
+        System.Console.WriteLine("Ingresar el número de filas: ");  
+        var numeroDeFilas = System.Console.ReadLine();
+        int numFilas = int.Parse(numeroDeFilas);
+        System.Console.WriteLine("Ingresar el número de columnas: ");
+        var numeroDeColumnas = System.Console.ReadLine();
+        int numColumnas = int.Parse(numeroDeColumnas);
+        int[,] matrizSuma=new int[numFilas,numColumnas];
+        //(Rellenar matriz) Almacenar en cada posición (i,j)
+        //El primer for entra a la fila
+        Random random = new Random();
+        for(int filas=0; filas<matrizSuma.GetLength(0);filas++)
+            {
+                //El segundo for va a leer cada una de las columnas
+                for( int columnas = 0; columnas<matrizSuma.GetLength(1); columnas++)
+                {
+                    int numero = random.Next(1, 11);
+                    // var chars = "CMYWGB";
+                    // var stringEnteros = new int[1];
+                    // var random = new Random();
+                    // for (int i = 0; i < stringEnteros.Length; i++)
+                    // {
+                        // stringEnteros[i] = chars[random.Next(chars.Length)];
+                    //     stringEnteros[i]=numero;
+                    // }
+                    // var finalInt = new Int(stringEnteros);
+                    // System.Console.WriteLine(finalString);
+                    matrizSuma[filas,columnas] = numero;
+                    // System.Console.Write(finalString);
+                }
+                // System.Console.WriteLine(separacion);
+            }
+        //Imprimir suma
+        
         return base.concepto;
     }
     public override float resta()
@@ -98,6 +131,14 @@ class Matrices:Calcular{
         {
             System.Console.WriteLine("Haz elegido una opción inválidad. Se cerrará el programa.");
             Environment.Exit(0);
+        }
+    }
+
+    public void imprimirMatriz(int[,] matriz)
+    {
+        foreach(int i in matriz)
+        {
+            System.Console.Write("{0}",i);
         }
     }
 }
