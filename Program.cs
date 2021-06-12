@@ -283,16 +283,12 @@ namespace DPRN2_U3_AC_ANEA
                 {
                     Matrices matrizCuadrada = new Matrices(8,"Matriz cuadrada");
                     matrizCuadrada.matrizCuadrada();
-                    System.Console.WriteLine("Se imprimirá la matriz cuadrada generada por el usuario: ");
-                    System.Console.WriteLine(matrizCuadrada);
                 }
                 //b.
                 else if(eleccionGeneracion==2)
                 {
                     Matrices matrizcuadradaautomatica = new Matrices(9, "Matriz cuadrada automática");
                     matrizcuadradaautomatica.matrizCuadradaAutomatica();
-                    System.Console.WriteLine("Se imprimirá la matriz cuadrada generada automáticamente: ");
-                    System.Console.WriteLine(matrizcuadradaautomatica);
                 }
                 break;
             }

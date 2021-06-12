@@ -3,6 +3,7 @@ class Matrices:Calcular{
 
     public string impimir = "¿Quiéres imprimir la matriz";
     public string opcionImprimir = "1.- Sí. 2.- No.";
+    public string separador="************************";
     public Matrices(int conceptoSeleccionado, string metodoACalcular):base(conceptoSeleccionado, metodoACalcular){ }
 
     public override float suma()
@@ -291,15 +292,28 @@ class Matrices:Calcular{
 
     public void matrizCuadrada()
     {
-        System.Console.WriteLine("Vamos a generar una matriz cuadrada.");
+        System.Console.WriteLine("Vamos a generar una matriz cuadrada de forma manual.");
         System.Console.WriteLine("Indícamos el número de filas: ");
         var opcionFilas = Console.ReadLine();
         int numeroDeFilas = int.Parse(opcionFilas);
         System.Console.WriteLine("Indícamos el número de columnas: ");
         var opcionColumnas = Console.ReadLine();
         int numeroDeColumnas = int.Parse(opcionFilas);
-        //Casificar la matriz dependiendo el tipo de matriz creada. 
-        //(Matriz triangular superior, Matriz triangular inferior, Matriz diagonal ó Matriz unidad).
+        //(Rellenar matriz) Almacenar en cada posición (i,j)
+        //El primer for entra a la fila
+        int relleno=0;
+        int[,] matrizManual=new int[numeroDeFilas,numeroDeColumnas];
+        for(int filas=0; filas<matrizManual.GetLength(0);filas++)
+            {
+                //El segundo for va a leer cada una de las columnas
+                for( int columnas = 0; columnas<matrizManual.GetLength(1); columnas++)
+                {
+                    System.Console.Write("Ingresa el valor de la matriz en la posición ["+filas+","+columnas+"]:");
+                    var numeroRelleno = Console.ReadLine();
+                    relleno = int.Parse(numeroRelleno);
+                    matrizManual[filas,columnas] = relleno;
+                }
+            }
 
         //Imprimir la matriz
         System.Console.WriteLine(impimir);
@@ -308,7 +322,7 @@ class Matrices:Calcular{
         double imprimirSelect = double.Parse(respuestaImprimir);
         if(imprimirSelect==1)
         {
-            System.Console.WriteLine("Impresión");
+            imprimirMatriz(matrizManual);
         }
         else if (imprimirSelect==2)
         {
@@ -319,40 +333,93 @@ class Matrices:Calcular{
             System.Console.WriteLine("Haz elegido una opción inválidad. Se cerrará el programa.");
             Environment.Exit(0);
         }
+        //Casificar la matriz dependiendo el tipo de matriz creada. 
+        //(Matriz triangular superior, Matriz triangular inferior, Matriz diagonal ó Matriz unidad).
+        /*Trianguar Superior: 
+        1 1 2        
+        0 5 3
+        0 0 -9
+        */
+        /*Triangular inferior:
+        1 0 0
+        9 5 0 
+        8 7 -9     
+        */
+        /*Diagonal
+        1 0 0
+        0 0 0
+        0 0 -9 
+        */
+        /*Matriz unidad
+        1 0 0       1 0       1 0 0 0
+        0 1 0       0 1       0 1 0 0 
+        0 0 1                 0 0 1 0
+                              0 0 0 1  
+        */
+
+
+
     }
     public void matrizCuadradaAutomatica()
     {
         //b) Generar una matriz cuadrada automáticamente y de forma aleatoria
-        System.Console.WriteLine("Vamos a generar una matriz cuadrada de forma aleatoria.");
-        //Generarla de prueba de 5x5.
-
+        System.Console.WriteLine("Vamos a generar una matriz cuadrada de forma aleatoria. El programa te asignará una opción: ");
+        //Se declaran e inicializarn las matrices.
+        /*Trianguar Superior: 
+        1 1 2        
+        0 5 3
+        0 0 -9        */
+        int[,] matrizTriangularSuperior={{1,1,2},{0,5,3},{0,0,-9}};
+        /*Triangular inferior:
+        1 0 0
+        9 5 0 
+        8 7 -9             */
+        int[,] matrizTriangularInferior={{1,0,0},{9,5,0},{8,7,-9}};
+        /*Diagonal
+        1 0 0
+        0 0 0
+        0 0 -9         */
+        int[,] matrizDiagonal={{1,0,0},{0,0,0},{0,0,-9}};
+        /*Matriz unidad
+        1 0 0       1 0       1 0 0 0
+        0 1 0       0 1       0 1 0 0 
+        0 0 1                 0 0 1 0
+                              0 0 0 1          */
+        int[,] matrizUnidad={{1,0,0,0},{0,1,0,0},{0,0,1,0},{0,0,0,1}};           
         //el usuario elegirá el tipo de matriz cuadrada a crear. 
         //(Matriz triangular superior, Matriz triangular inferior, Matriz diagonal ó Matriz unidad)
-        System.Console.WriteLine("Elige la matriz cuadrada a crear");
         System.Console.WriteLine("1.- Matriz triangular superior");
         System.Console.WriteLine("2.- Matriz triangular inferior");
         System.Console.WriteLine("3.- Matriz diagonal");
         System.Console.WriteLine("4.- Matriz unidad");
-        var respuestaMatriz = Console.ReadLine();
-        double matrizElegida = double.Parse(respuestaMatriz);
+        Random random = new Random();
+        // var respuestaMatriz = Console.ReadLine();
+        double matrizElegida = random.Next(1,4);
+        System.Console.WriteLine("El sistema ha seleccionado aleatoriamente {0}",matrizElegida);
+        if(matrizElegida==1)
+        {
+            System.Console.WriteLine("***Matriz triangular superior***");
+            imprimirMatriz(matrizTriangularSuperior);
+            System.Console.WriteLine(separador);
+        }
+        else if(matrizElegida==2)
+        {
+            System.Console.WriteLine("***Matriz triangular inferior***");
+            imprimirMatriz(matrizTriangularInferior);
+            System.Console.WriteLine(separador);
+        }
+        else if(matrizElegida==3)
+        {
+            System.Console.WriteLine("***Matriz diagonal***");
+            imprimirMatriz(matrizDiagonal);
+            System.Console.WriteLine(separador);
 
-        //Imprimir la matriz
-        System.Console.WriteLine(impimir);
-        System.Console.WriteLine(opcionImprimir);
-        var respuestaImprimir = Console.ReadLine();
-        double imprimirSelect = double.Parse(respuestaImprimir);
-        if(imprimirSelect==1)
-        {
-            System.Console.WriteLine("Impresión");
         }
-        else if (imprimirSelect==2)
+        else if(matrizElegida==4)
         {
-            Environment.Exit(0);
-        }
-        else
-        {
-            System.Console.WriteLine("Haz elegido una opción inválidad. Se cerrará el programa.");
-            Environment.Exit(0);
+            System.Console.WriteLine("***Matriz unidad***");
+            imprimirMatriz(matrizUnidad);
+            System.Console.WriteLine(separador);
         }
     }
 
@@ -390,4 +457,25 @@ class Matrices:Calcular{
         }
     }
 
+    public void imprimirMatrizAutomatica(int[,] matriz)
+    {
+        //Imprimir la matriz
+        System.Console.WriteLine(impimir);
+        System.Console.WriteLine(opcionImprimir);
+        var respuestaImprimir = Console.ReadLine();
+        double imprimirSelect = double.Parse(respuestaImprimir);
+        if(imprimirSelect==1)
+        {
+            imprimirMatriz(matriz);
+        }
+        else if (imprimirSelect==2)
+        {
+            Environment.Exit(0);
+        }
+        else
+        {
+            System.Console.WriteLine("Haz elegido una opción inválidad. Se cerrará el programa.");
+            Environment.Exit(0);
+        }
+    }
 }
