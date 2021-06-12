@@ -247,7 +247,46 @@ class Matrices:Calcular{
     }
 
     public void matrizTranspuesta(){
-        System.Console.WriteLine("La matriz transpuesta");
+        int Filas = 0;
+        int Columnas = 0;
+        int numero = 0;
+        string texto;
+        System.Console.WriteLine("Ingresar el tamaño de la matriz: ");  
+        texto = Console.ReadLine();
+        numero = int.Parse(texto);
+        int[,] MatrizOrigin = new int[100,100];
+        int[,] MatrizTrans = new int[numero+1,numero+1];
+        Random random = new Random();
+        System.Console.WriteLine("Matriz original");
+        for(Filas=1; Filas<=numero; Filas++)
+        {
+            for(Columnas=1;Columnas<=numero;Columnas++)
+            {
+                MatrizOrigin[Filas, Columnas]=random.Next(0,100);
+                // Console.SetCursorPosition(Columnas*4, Filas+1);
+                Console.Write(MatrizOrigin[Filas,Columnas]+" ");
+            }
+            Console.WriteLine();
+        }
+        //Proceso de transpuesta
+        for(Filas=1;Filas<=numero;Filas++)
+        {
+            for(Columnas=1;Columnas<=numero;Columnas++)
+            {
+                MatrizTrans[Filas,Columnas]=MatrizOrigin[Columnas,Filas];
+            }
+        } 
+        //Impresión de matriz transpuesta
+        System.Console.WriteLine("Matriz Transpuesta: ");
+        for(Filas=1;Filas<=numero;Filas++)
+        {
+            for(Columnas=1;Columnas<=numero;Columnas++)
+            {
+                // Console.SetCursorPosition(Columnas*4, Filas+10);
+                Console.Write(MatrizTrans[Filas, Columnas]+" ");
+            }
+            Console.WriteLine();
+        }
     }
 
     public void matrizCuadrada()

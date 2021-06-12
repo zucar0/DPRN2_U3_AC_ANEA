@@ -13,6 +13,7 @@ namespace DPRN2_U3_AC_ANEA
             string division = "4.- División ";
             string alCuadrado = "5.- Al Cuadrado ";
             string potencia="6.- Potencia ";
+            string transpuesta="7.- Transpuesta";
             string elegirMetodo ="Por favor elige el método que deseas calcular:\n";
 
             System.Console.WriteLine("Bienvenido. Por favor ingresa el concepto a calcular.");  
@@ -185,7 +186,7 @@ namespace DPRN2_U3_AC_ANEA
                 case 3 when (elegirConcepto==3):
                 //Se abre un nuevo menú para elegir el método
                 System.Console.WriteLine(elegirMetodo);
-                System.Console.WriteLine(suma+resta+multiplicacion+division+alCuadrado+potencia);
+                System.Console.WriteLine(suma+resta+multiplicacion+division+alCuadrado+potencia+transpuesta);
                 var opcionMetodo3 = Console.ReadLine();
                 int metodoElegido3 = int.Parse(opcionMetodo3);
                 if(metodoElegido3==1)
